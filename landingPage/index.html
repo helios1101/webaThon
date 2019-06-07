@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -29,11 +29,26 @@
       href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
       crossorigin="anonymous"
+    /> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <!-- <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand">Navbar</a>
       <form class="form-inline">
         <input
@@ -46,7 +61,27 @@
           Search
         </button>
       </form>
-    </nav>
+    </nav> -->
+
+    <header style="position: fixed">
+        <div class="container">
+          <nav id="navigation">
+            <a href="#" class="logo">Jan Czizikow</a>
+            <a aria-label="mobile menu" class="nav-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+            </a>
+              <ul class="menu-left">
+                <li><a href="#about">About</a></li>
+                <li style="margin-left: 30px"><a href="#exp">Resume</a></li>
+                <li style="margin-left: 30px"><a href="#skills">Skills</a></li>
+                <li style="margin-left: 30px"><a href="#projects">Projects</a></li>
+                <li style="margin-left: 30px"><a href="#contact">Contact</a></li>
+              </ul>
+          </nav>
+        </div>
+      </header>
     <!-- <div class="container"> -->
     <div class="jumbotron jumbotron-fluid">
       <div class="container">
@@ -61,7 +96,7 @@
 
     <!-- cards -->
     <center>
-      <div class="slide-container">
+      <div class="slide-container" style="margin-top: 20px;">
         <div class="clash-card barbarian">
           <div class="clash-card__image clash-card__image--barbarian">
             <img
@@ -201,5 +236,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

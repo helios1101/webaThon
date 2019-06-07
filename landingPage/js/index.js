@@ -16,5 +16,4 @@
   slideContainer.on('afterChange', function(event, slick, currentSlide) {
     $('.slick-active').find('.clash-card img').fadeIn(200);
   });
-  
 })();
