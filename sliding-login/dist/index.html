@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sliding Login</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <a class="box-item" href="https://codepen.io/Anna_Batura/" target="_blank"
+      ><img
+        class="rabbit"
+        src="/home/helios/Desktop/webathon/finalProjet/log-in-sign-up/dist/ca_logo.png"
+    /></a>
+    <!-- <div>
+      <header id="header" class="header-area">
+        <div class="elkevent-mobile-nav">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="assets/img/logo.png" alt="logo" style="width:30%"
+            /></a>
+          </div>
+        </div>
+
+        <div class="elkevent-nav">
+          <div class="containerl">
+            <nav class="navbar navbar-expand-md navbar-light">
+              <a class="navbar-brand" href="index.html"
+                ><img src="assets/img/logo.png" alt="logo" style="width:30%"
+              /></a>
+
+              <div
+                class="collapse navbar-collapse mean-menu"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Courses</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">FAQs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Alumni Program</a>
+                  </li>
+                </ul>
+
+                <div class="others-option">
+                  <ul>
+                    <li></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </div> -->
+
+    <center>
+      <div class="container" id="container" style="margin-top: 20vh;">
+        <div class="form-container sign-up-container">
+          <!-- Sign Up form code goes here -->
+          <form action="#">
+            <h1>Create Account</h1>
+            <input type="text" placeholder="UserName" name="user_name"/>
+            <input type="text" placeholder="Name" name="name"/>
+            <input type="text" placeholder="Gender" name="gender" value="NULL" hidden/>
+            <input type="number" placeholder="Phone" name="phone" hidden/>
+            <input type="email" placeholder="Email" name="email"/>
+            <input type="password" placeholder="Password" name="password"/>
+            <input type="text" placeholder="Pin" name="pin" hidden/>
+            <input type="text" placeholder="Photo" name="photo" hidden/>
+            <input type="text" placeholder="GithubHandle" name="Github_Handle" hidden />
+            <input type="text" placeholder="UType" name="User_type">
+            <input type="number" name="Skill_id" value>
+            <button>Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <!-- Sign In form code goes here -->
+          <form action="#">
+            <h1>Sign in</h1>
+
+            <input type="email" placeholder="Email" />
+            <input type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button>Sign In</button>
+          </form>
+        </div>
+          <div class="overlay-container">
+            <!-- The overlay code goes here -->
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>
+                  Please login
+                </p>
+                <button class="ghost" id="signIn">Sign In</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Welcome!</h1>
+                <p>Please enter your personal details</p>
+                <button class="ghost" id="signUp">Sign Up</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </center>
+    <a class="box-item" href="https://codepen.io/Anna_Batura/" target="_blank"
+      ><img
+        class="rabbit"
+        src="/home/helios/Desktop/webathon/finalProjet/log-in-sign-up/dist/ca_logo.png"
+    /></a>
+    <script src="./script.js"></script>
+  </body>
+</html>
