@@ -110,18 +110,18 @@
           </div> -->
           <div class="task_output">
             <ul class="task_list" id="curves">
-              <li> <h1>Hackathon 1.0</h1> 
+             <a href="" id="hackathonList"> <li> <h1></h1> 
                 <!-- <span class="cross"><i class="fa fa-times"></i></span>
                 <span class="check"><i class="fa fa-check"></i></span> -->
-              </li>
-              <li> <h1> Hackathon 2.0 </h1> 
+              </li></a>
+              <!-- <a href=""><li> <h1> Hackathon 2.0 </h1>  -->
                 <!-- <span class="cross"><i class="fa fa-times"></i></span>
                 <span class="check"><i class="fa fa-check"></i></span> -->
-              </li>
-              <li><h1>Hackathon 3.0</h1>
+              <!-- </li></a>
+          <a href=""><li><h1>Hackathon 3.0</h1> -->
                 <!-- <span class="cross"><i class="fa fa-times"></i></span>
                 <span class="check"><i class="fa fa-check"></i></span> -->
-              </li>
+              <!-- </li></a> -->
             </ul>
           </div>
         </div>
@@ -151,5 +151,18 @@
     <script src="./js/index.js"></script>
     <script src="https://yourwebsite.com/script.js"></script>
     <script src="https://codepen.io/username/pen/aBcDef"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript">
+    axios.get('/hackathonByUserId/:id')
+    .then(function(res){
+      for(var i=0;i<res.data;i++){
+        document.getElementById('hackathonList').innerHTML = res.data[i].name ;
+      }
+    })
+    .catch(function(err){
+      console.log(err);
+    })
+    </script>
+    </script>
   </body>
 </html>
