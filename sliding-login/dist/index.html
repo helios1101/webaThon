@@ -94,6 +94,20 @@
     let github_handle = document.getElementById("github_handle").value;
     let user_type = document.getElementById("user_type").value;
     console.log(user_name,name);
+    axios.post("/doRegistration",{
+      user_name: user_name,
+      name : name,
+      gender : gender,
+      phone : phone,
+      is_otp_verified : is_otp_verified,
+      email : email,
+      is_email_verified : is_email_verified,
+      password : password,
+      pin : pin,
+      photo : photo,
+      github_handle : github_handle,
+      user_type : user_type
+    })
   }
   function signIn(){
     //TODO: XHR:
