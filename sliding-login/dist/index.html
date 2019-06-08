@@ -20,31 +20,31 @@
             <h1>Your Hack Account</h1>
             <input type="text" placeholder="UserName" name="user_name" id="user_name"/>
             <input type="text" placeholder="Name" name="name" id="name"/>
-            <input type="text" placeholder="Gender" name="gender" value="NULL" hidden/>
+            <input type="text" placeholder="Gender" name="gender" id="gender" value="NULL" hidden/>
             <input type="number" placeholder="Phone" name="phone" id="phone"/>
             <input type="email" placeholder="Email" name="email" id="email"/>
             <input type="password" placeholder="Password" name="password" id="password"/>
             <input type="text" placeholder="Pin" name="pin" id="pin" hidden/>
             <input type="text" placeholder="Photo" name="photo" value="NULL" id="photo" hidden/>
             <input type="text" placeholder="GithubHandle" name="Github_Handle" id="Github_Handle" hidden />
-            <select id="User_type" class="form-control form-control-lg">
-              <option name="default">Select Your Option</option>
-              <option name="Host">Host</option>
-              <option name="User">User</option>
+            <select id="user_type" class="form-control form-control-lg">
+              <option name="default">Select Your Purpose</option>
+              <option name="Host">Host The Hack</option>
+              <option name="User">Participate In The Hack</option>
             </select>
             <!-- <input type="number" name="Skill_id" value> -->
-            <button onclick="return signUp();">Sign Up</button>
+            <button onclick="signUp();">Sign Up</button>
           </form>
         </div>
         <div class="form-container sign-in-container">
           <!-- Sign In form code goes here -->
-          <form action="#">
+          <form>
             <h1>Sign in</h1>
 
             <input type="email" placeholder="Email" name="email" id="emailIn"/>
             <input type="password" placeholder="Password" name="password" id="passwordIn"/>
             <a href="#">Forgot your password?</a>
-            <button onclick="return signIn();">Sign In</button>
+            <button onclick="signIn();">Sign In</button>
           </form>
         </div>
           <div class="overlay-container">
@@ -72,25 +72,33 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
   <script>
+
+  function isEmailVerified(){
+    //TODO: XHR for phone number verification
+  }
+  function isPhoneVerified(){
+    //TODO: XHR for phone verification
+  }
   function signUp(){
     //TODO: XHR 
-    user_name = document.getElementById("user_name").value;
-    name = document.getElementById("name").value;
-    gender = document.getElementById("gender").value;
-    phone = document.getElementById("phone").value;
-    is_otp_verified = document.getElementById("is_otp_verified").value;
-    email = document.getElementById("email").value;
-    is_email_verified = document.getElementById("is_email_verified").value;
-    password = document.getElementById("password").value;
-    pin = document.getElementById("pin").value;
-    photo = document.getElementById("photo").value;
-    github_handle = document.getElementById("github_handle").value;
-    user_type = document.getElementById("user_type").value;
+    let user_name = document.getElementById("user_name").value;
+    let name = document.getElementById("name").value;
+    let gender = document.getElementById("gender").value;
+    let phone = document.getElementById("phone").value;
+    let is_otp_verified = 0; 
+    let email = document.getElementById("email").value;
+    let is_email_verified = 0;
+    let password = document.getElementById("password").value;
+    let pin = document.getElementById("pin").value;
+    let photo = document.getElementById("photo").value;
+    let github_handle = document.getElementById("github_handle").value;
+    let user_type = document.getElementById("user_type").value;
+    console.log(user_name,name);
   }
   function signIn(){
     //TODO: XHR:
-    phone = document.getElementById("phone").value;
-    password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
   }
   </script>
   </body>
