@@ -9,21 +9,23 @@
     />
 
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
       integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./style.css" />
 
     <title>Hello, world!</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <!-- <p>
@@ -89,7 +91,7 @@
         <header style="position: fixed">
             <div class="container">
               <nav id="navigation">
-                <a href="#" class="logo"><img src=""></a>
+                <a href="#" class="logo"><img src="">Logo</a>
                 <a aria-label="mobile menu" class="nav-toggle">
                   <span></span>
                   <span></span>
@@ -262,17 +264,30 @@
     ></script>
     <script>
     function loop(){
-      //TODO: xhr likhna hai !!
-      let Submissions_details1 = o.response.Submissions_details1;
-      let Submissions_details2 = o.response.Submissions_details2;
-      let Submissions_stack = o.response.Submissions_stack;
-      let Submissions_score = o.response.Submissions_score;
+      //TODO: xhr likhna ha
+      Submissions_details1 = "wow";
+      Submissions_details2 = "Wow2";
+      Submissions_stack = "ssdd";
+      Submissions_score = "23";
+      axios.get("/submissions")
+      .then(res=>{
+        for(let i=0;i<res.data.length;i++){
+          var ele = `<center> <div class='jumbotron jumbotron-fluid'> <h1 class='display-4'>${Submissions_details1}</h1><p >${Submissions_details2}<br>${Submissions_stack}<br>${Submissions_score}<div class='collapse multi-collapse' id='multiCollapseExample${i}'><br></div></p><p class='lead' class='padding:10px;'><a class='btn btn-primary btn-lg' data-toggle='collapse' href='#multiCollapseExample${i}' role='button' aria-expanded='false' aria-controls='multiCollapseExample${i}'>Toggle first element</a></p></div></center>`;  
+          $("#add").append(ele);
+      }
+      })
+      .catch(err=>{
+        console.log(err)
+      })
+      // let Submissions_details1 = o.response.Submissions_details1;
+      // let Submissions_details2 = o.response.Submissions_details2;
+      // let Submissions_stack = o.response.Submissions_stack;
+      // let Submissions_score = o.response.Submissions_score;
       // let Submissions_hosting = o.response.Submissions_hosting;
       // let Submissions_git = o.response.Submissions_git;
       // let submissions_picture = o.response.submissions_picture;
       // let position_winner = o.response.position_winner;
-      var ele = `<center> <div class='jumbotron jumbotron-fluid'> <h1 class='display-4'>${Submissions_details1}</h1><p >${Submissions_details2}<br>${Submissions_stack}<br>${Submissions_score}<div class='collapse multi-collapse' id='multiCollapseExample1'><br></div></p><p class='lead' class='padding:10px;'><a class='btn btn-primary btn-lg' data-toggle='collapse' href='#multiCollapseExample1' role='button' aria-expanded='false' aria-controls='multiCollapseExample1'>Toggle first element</a></p></div></center>`;  
-      $("#add").append(ele);
+      let length = 3; //change to response length
     }
     loop();
     </script>
