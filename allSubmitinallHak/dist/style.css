@@ -12,7 +12,14 @@ a:active {
   text-decoration: none;
   outline: none;
 }
-
+input[type="text"] {
+  width: 200px;
+  -webkit-transition: width 0.35s ease-in-out;
+  transition: width 0.35s ease-in-out;
+}
+input[type="text"]:focus {
+  width: 300px;
+}
 a,
 a:active,
 a:focus {
