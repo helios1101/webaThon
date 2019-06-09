@@ -25,7 +25,7 @@
             <input type="number" placeholder="Phone" name="phone" id="phone"/>
             <input type="email" placeholder="Email" name="email" id="email"/>
             <input type="password" placeholder="Password" name="password" id="password"/>
-            <input type="text" placeholder="Pin" name="pin" id="pin" hidden/>
+            <input type="number" placeholder="Pin" name="pin" id="pin" value="123" hidden/>
             <input type="text" placeholder="Photo" name="photo" value="NULL" id="photo" hidden/>
             <input type="text" placeholder="GithubHandle" name="Github_Handle" id="github_handle" value="NULL" hidden />
             <select type="text" placeholder="choose Your Type" id="user_type" class="form-control form-control-lg">
@@ -79,21 +79,21 @@
   function isPhoneVerified(){
     //TODO: XHR for phone verification
   }
-  function signUp(){
-    //TODO: XHR 
-    let user_name = document.getElementById("user_name").value;
-    let name = document.getElementById("name").value;
-    let gender = document.getElementById("gender").value;
-    let phone = document.getElementById("phone").value;
-    let is_otp_verified = 0; 
-    let email = document.getElementById("email").value;
-    let is_email_verified = 0;
-    let password = document.getElementById("password").value;
-    let pin = document.getElementById("pin").value;
-    let photo = document.getElementById("photo").value;
-    let github_handle = document.getElementById("github_handle").value;
-    let user_type = document.getElementById("user_type").value;
-      axios.post("http://10.10.11.61:8080/ca/userData",{
+  function signUp(){ 
+    
+    var user_name = document.getElementById("user_name").value;
+    var name = document.getElementById("name").value;
+    var gender = document.getElementById("gender").value;
+    var phone = parseInt(document.getElementById("phone").value);
+    var is_otp_verified = false; 
+    var email = document.getElementById("email").value;
+    var is_email_verified = false;
+    var password = document.getElementById("password").value;
+    var pin = parseInt(document.getElementById("pin").value);
+    var photo = document.getElementById("photo").value;
+    var github_handle = document.getElementById("github_handle").value;
+    var user_type = document.getElementById("user_type").value;
+      axios.post("http://10.10.11.61:8080/ca/user",{
       user_name: user_name,
       name : name,
       gender : gender,
@@ -115,8 +115,8 @@
   }
   function signIn(){
     //TODO: XHR:
-    let phone = document.getElementById("phone").value;
-    let password = document.getElementById("password").value;
+    var phone = parseInt(document.getElementById("phone").value);
+    var password = document.getElementById("password").value;
     axios.get(`/isRegisteredUser/${phone}`)
     .then(res=>{
       alert("Signing IN");

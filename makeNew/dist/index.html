@@ -2,7 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Pretty Form</title>
+    <meta name="description" content="Best Coding Bootcamp In India" />
+    <meta content="Coding Bootcamp" name="generator" />
+
+    <title>
+      CodeAsylums - Best Coding Bootcamp In India | Data Structures | Algorithms
+      | Full Stack Development | Machine Learning | Data Science
+    </title>
 
     <link
       rel="stylesheet"
@@ -41,24 +47,40 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
     <header style="position: fixed">
       <div class="container">
         <nav id="navigation">
-          <a href="#" class="logo">Jan Czizikow</a>
+          <a href="#" class="logo">CodeAsylums Hack</a>
           <a aria-label="mobile menu" class="nav-toggle">
             <span></span>
             <span></span>
             <span></span>
           </a>
           <ul class="menu-left">
-            <li><a href="#about">About</a></li>
-            <li style="margin-left: 30px"><a href="#exp">Resume</a></li>
-            <li style="margin-left: 30px"><a href="#skills">Skills</a></li>
-            <li style="margin-left: 30px"><a href="#projects">Projects</a></li>
-            <li style="margin-left: 30px"><a href="#contact">Contact</a></li>
+            <li><a href="#about"></a></li>
+            <li style="margin-left: 30px">
+              <a
+                href="/home/helios/Desktop/github/webaThon/landingPage/index.html"
+                >Explore</a
+              >
+            </li>
+            <li style="margin-left: 30px">
+              <a
+                href="/home/helios/Desktop/github/webaThon/hackathon-list/index.html"
+                >Hacks Enrolled</a
+              >
+            </li>
+            <li style="margin-left: 30px"><a href="#">Your Hacks</a></li>
+            <li style="margin-left: 30px">
+              <a
+                href="/home/helios/Desktop/github/webaThon/makeNew/dist/index.html"
+                >Profile</a
+              >
+            </li>
           </ul>
         </nav>
       </div>
@@ -75,12 +97,15 @@
       </div>
     </div>
     <form onsubmit="return false">
-      <legend><span class="number">3</span> Submit Your Hack:</legend>
+      <legend>
+        <span class="number" style="background: rgb(255,170,100);">3</span>
+        Update Your Profile:
+      </legend>
       <br />
       <label for="bio">Username</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
-      <input
+          <input
             type="text"
             class="form-control"
             placeholder="Username"
@@ -106,16 +131,20 @@
       <label for="gender">Gender</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
-          <select class="form-control form-control-default" id="gender" aria-describedby="inputGroup-sizing-default">
+          <select
+            class="form-control form-control-default"
+            id="gender"
+            aria-describedby="inputGroup-sizing-default"
+          >
             <option>Select</option>
             <option>Male</option>
             <option>Female</option>
             <option>Prefer not to specify</option>
           </select>
-      </div>
+        </div>
       </div>
       <br />
-      <label for="phone">phone</label>
+      <label for="phone">Phone</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
           <input
@@ -128,13 +157,13 @@
         </div>
       </div>
       <br />
-      <label for="email">email</label>
+      <label for="email">Email</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
           <input
             type="email"
             class="form-control"
-            placeholder="Username"
+            placeholder="Email Address"
             id="email"
             name="email"
           />
@@ -154,19 +183,6 @@
         </div>
       </div>
       <br />
-      <!-- <label for="photo">Photo</label>
-      <div class="col-lg-12 col-sm-12">
-        <div class="input-group">
-          <input
-            type="photo"
-            class="form-control"
-            placeholder="Username"
-            id="photo"
-            name="photo"
-          />
-        </div>
-      </div>
-      <br /> -->
       <label for="githubHandle">Github Handle</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
@@ -180,7 +196,7 @@
         </div>
       </div>
       <br />
-      <hr>
+      <hr />
       <label for="skill_data">Skill Data</label>
       <div class="col-lg-12 col-sm-12">
         <div class="input-group">
@@ -189,65 +205,60 @@
             class="form-control"
             rows="4"
             cols="50"
-            placeholder="Skill Data"
+            placeholder="Your Whole Skills (separated by comma"
             id="email"
             name="email"
           ></textarea>
         </div>
       </div>
       <br />
-      <!-- <label for="user_id">User ID</label>
-      <div class="col-lg-12 col-sm-12">
-        <div class="input-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Username"
-            id="user_id"
-            name="user_id"
-          />
-        </div>
-      </div>
-      <br /> -->
 
-      <button type="submit" onclick="return submitHack();">
-        Submit Your for Hack
+      <button
+        type="submit"
+        style="background: rgb(248, 95, 115);"
+        onclick="return update();"
+      >
+        Update MySelf
       </button>
     </form>
     <script>
       // TODO: xhr likhna hai !
-      function submitHack() {
+      function update() {
         //TODO: let team_id =
-        let submission_details1 = document.getElementById(
-          "submissions_details1"
-        ).value;
-        let submission_details2 = document.getElementById("submission_details2")
-          .value;
-        let submissions_stack = document.getElementById("submissions_stack")
-          .value;
-        let submissions_hosting = document.getElementById("submissions_hosting")
-          .value;
-        let submissions_git = document.getElementById("submissions_git").value;
-        let submissions_picture = document.getElementById("submissions_picture")
-          .value;
-        let submissions_remark = "NULL";
-        let position_winner = "First";
+        let user_name = document.getElementById("user_name").value;
+        let name = document.getElementById("name").value;
+        let gender = document.getElementById("gender").value;
+        let phone = document.getElementById("phone").value;
+        let is_otp_verified = 0;
+        let email = document.getElementById("email").value;
+        let is_email_verified = 0;
+        let password = document.getElementById("password").value;
+        let pin = document.getElementById("pin").value;
+        let photo = document.getElementById("photo").value;
+        let github_handle = document.getElementById("github_handle").value;
+        let user_type = document.getElementById("user_type").value;
         axios
-          .post("/makeSubmit", {
-            submissions_details1: submission_details1,
-            submissions_details2: submission_details2,
-            submissions_stack: submissions_stack,
-            submissions_hosting: submissions_hosting,
-            submissions_git: submissions_git,
-            submissions_picture: submissions_picture,
-            submissions_remark: submissions_remark,
-            position_winner: position_winner
+          .post("http://10.10.11.61:8080/ca/userData", {
+            user_name: user_name,
+            name: name,
+            gender: gender,
+            phone: phone,
+            is_otp_verified: is_otp_verified,
+            email: email,
+            is_email_verified: is_email_verified,
+            password: password,
+            pin: pin,
+            photo: photo,
+            github_handle: github_handle,
+            user_type: user_type
           })
           .then(res => {
-            alert("Successfully Done");
+            alert("Updated Sucessfully");
+            window.location.pathname =
+              "/home/helios/Desktop/github/webaThon/landingPage/index.html";
           })
           .catch(err => {
-            alert("Not registeed");
+            alert("Update Unsuccessful");
           });
       }
     </script>

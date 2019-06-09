@@ -1,0 +1,6 @@
+1. Refine - signout
+2. profile - explore and enroll and puri information and update 
+3. overall hak - all produts with 2-3 filters
+4. host dashboard
+5, admin dashboard
+6. Modularize karna
