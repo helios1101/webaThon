@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="./style.css" />
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -16,7 +17,7 @@
       <div class="container" id="container" style="margin-top: 20vh;">
         <div class="form-container sign-up-container">
           <!-- Sign Up form code goes here -->
-          <form>
+          <form onsubmit="return false">
             <h1>Your Hack Account</h1>
             <input type="text" placeholder="UserName" name="user_name" id="user_name"/>
             <input type="text" placeholder="Name" name="name" id="name"/>
@@ -26,25 +27,24 @@
             <input type="password" placeholder="Password" name="password" id="password"/>
             <input type="text" placeholder="Pin" name="pin" id="pin" hidden/>
             <input type="text" placeholder="Photo" name="photo" value="NULL" id="photo" hidden/>
-            <input type="text" placeholder="GithubHandle" name="Github_Handle" id="Github_Handle" hidden />
-            <select id="user_type" class="form-control form-control-lg">
-              <option name="default">Select Your Purpose</option>
-              <option name="Host">Host The Hack</option>
-              <option name="User">Participate In The Hack</option>
+            <input type="text" placeholder="GithubHandle" name="Github_Handle" id="github_handle" value="NULL" hidden />
+            <select type="text" placeholder="choose Your Type" id="user_type" class="form-control form-control-lg">
+              <option value="Host">Host The Hack</option>
+              <option value="User">Participate In The Hack</option>
             </select>
             <!-- <input type="number" name="Skill_id" value> -->
-            <button onclick="signUp();">Sign Up</button>
+            <button type="submit" onclick="return signUp();">Sign Up</button>
           </form>
         </div>
         <div class="form-container sign-in-container">
           <!-- Sign In form code goes here -->
-          <form>
+          <form onsubmit="return false">
             <h1>Sign in</h1>
 
             <input type="email" placeholder="Email" name="email" id="emailIn"/>
             <input type="password" placeholder="Password" name="password" id="passwordIn"/>
             <a href="#">Forgot your password?</a>
-            <button onclick="signIn();">Sign In</button>
+            <button onclick="return signIn();">Sign In</button>
           </form>
         </div>
           <div class="overlay-container">
@@ -67,7 +67,7 @@
       </div>
     </center>
   </div>
-    <script src="./script.js"></script>
+    >
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
@@ -93,8 +93,7 @@
     let photo = document.getElementById("photo").value;
     let github_handle = document.getElementById("github_handle").value;
     let user_type = document.getElementById("user_type").value;
-    console.log(user_name,name);
-    axios.post("/doRegistration",{
+      axios.post("http://10.10.11.61:8080/ca/userData",{
       user_name: user_name,
       name : name,
       gender : gender,
@@ -107,13 +106,25 @@
       photo : photo,
       github_handle : github_handle,
       user_type : user_type
+    }).then(res=>{
+        alert("Registered Sucessfully");
+        window.location.pathname = '/home/helios/Desktop/github/webaThon/landingPage/index.html';
+    }).catch(err=>{
+      alert("Not Registered");
     })
   }
   function signIn(){
     //TODO: XHR:
     let phone = document.getElementById("phone").value;
     let password = document.getElementById("password").value;
+    axios.get(`/isRegisteredUser/${phone}`)
+    .then(res=>{
+      alert("Signing IN");
+    }).catch(err=>{
+      alert("Wrong credentials");
+    })
   }
   </script>
+  <script src="./script.js"></script>
   </body>
 </html>

@@ -2,7 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Pretty Form</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Best Coding Bootcamp In India" />
+    <meta content="Coding Bootcamp" name="generator" />
+
+    <title>
+      CodeAsylums - Best Coding Bootcamp In India | Data Structures | Algorithms
+      | Full Stack Development | Machine Learning | Data Science
+    </title>
 
     <link
       rel="stylesheet"
@@ -47,18 +57,22 @@
     <header style="position: fixed">
       <div class="container">
         <nav id="navigation">
-          <a href="#" class="logo">Jan Czizikow</a>
+          <a href="#" class="logo">CodeAsylums Hack</a>
           <a aria-label="mobile menu" class="nav-toggle">
             <span></span>
             <span></span>
             <span></span>
           </a>
           <ul class="menu-left">
-            <li><a href="#about">About</a></li>
-            <li style="margin-left: 30px"><a href="#exp">Resume</a></li>
-            <li style="margin-left: 30px"><a href="#skills">Skills</a></li>
-            <li style="margin-left: 30px"><a href="#projects">Projects</a></li>
-            <li style="margin-left: 30px"><a href="#contact">Contact</a></li>
+            <li><a href="#about"></a></li>
+            <li style="margin-left: 30px">
+              <a href="./index.html">Explore</a>
+            </li>
+            <li style="margin-left: 30px">
+              <a href="./../hackathon-list/index.html">Hacks Enrolled</a>
+            </li>
+            <li style="margin-left: 30px"><a href="#">Your Hacks</a></li>
+            <li style="margin-left: 30px"><a href="./../">Profile</a></li>
           </ul>
         </nav>
       </div>
@@ -75,7 +89,10 @@
       </div>
     </div>
     <form onsubmit="return false">
-      <legend><span class="number">2</span> Submit Your Hack:</legend>
+      <legend>
+        <span style="background: rgb(255,170,100);" class="number">2</span>
+        Submit Your Hack:
+      </legend>
       <br />
       <label for="bio">Name Of The Hack :</label>
       <textarea
@@ -144,14 +161,35 @@
         </div>
       </div>
       <br />
-      <button type="submit" onclick="return submitHack();">
+      <button
+        type="submit"
+        style="background: rgb(248, 95, 115);"
+        onclick="return submitHack();"
+      >
         Submit Your for Hack
       </button>
     </form>
     <script>
       // TODO: xhr likhna hai !
       function submitHack() {
-        //TODO: let team_id =
+        window.hackathon_id = 0; //HackathonId
+        window.team_id = 0;
+        userId = 1;
+        axios
+          .get(`/isRegisteredUser/${userId}`)
+          .then(res => {})
+          .catch(err => {
+            alert("Wrong credentials");
+            window.hackathon_id = 124;
+          });
+        axios
+          .get(`/isRegisteredUser/${userId}`)
+          .then(res => {})
+          .catch(err => {
+            alert("Wrong credentials");
+            window.team_id = 124;
+          });
+
         let submission_details1 = document.getElementById(
           "submissions_details1"
         ).value;
@@ -165,9 +203,11 @@
         let submissions_picture = document.getElementById("submissions_picture")
           .value;
         let submissions_remark = "NULL";
-        let position_winner = "First";
+        let position_winner = "NULL";
         axios
           .post("/makeSubmit", {
+            hackathon_id: window.hackathon_id,
+            team_id: window.team_id,
             submissions_details1: submission_details1,
             submissions_details2: submission_details2,
             submissions_stack: submissions_stack,
@@ -187,3 +227,5 @@
     </script>
   </body>
 </html>
+
+<!-- TODO: make multiple dropdown . -->
