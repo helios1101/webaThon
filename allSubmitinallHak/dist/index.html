@@ -70,27 +70,32 @@
 
     <br />
     <div class="container">
+      <!-- <center> -->
+
+      <span class="border:2px" style="float: right; margin: 2px;">
+        <button class="btn btn-danger">Filter Search</button>
+      </span>
+
+      <div class="select-dropdown" style="float: left; margin: 2px;">
+        <select name="hacks">
+          <option value="hackathon0">All Hackathons</option>
+          <option value="hackathons1">Hackathons-1</option>
+          <option value="hackathons2">Hackathons-2</option>
+          <option value="hackathons3">Hackathons-3</option>
+        </select>
+      </div>
+
       <center>
         <input
           type="text"
           placeholder="Skills"
-          class="col-lg-4 col-md-4 col-sm-4"
+          class="col-lg-6 col-md-6 col-sm-6"
           name="search"
           id="skill"
         />
-        &nbsp;
-        <span class="border:1px">
-          <button class="btn btn-danger">Filter Search:</button>
-        </span>
-        &nbsp;
-        <input
-          type="text"
-          placeholder="Hackathons"
-          class="col-lg-4 col-md-4 col-sm-4"
-          name="search"
-          id="hackId"
-        />
       </center>
+
+      <!-- </center> -->
     </div>
 
     <div class="feat bg-gray pt-5 pb-5">
@@ -179,5 +184,51 @@
         </div>
       </div>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function hackall() {
+        var submissions_details1 = "wow";
+        var submissions_details2 = "Wow2";
+        var submissions_stack = "ssdd";
+        var submissions_score = 23;
+        var remarks = 123;
+        for (let i = 0; i < 3; i++) {
+          var ele = ` <div class="col-lg-12 col-sm-12">
+            <div class="item">
+              <span class="icon feature_box_col_two"
+                ><i class="fa fa-anchor"></i
+              ></span>
+              <h6>${submissions_details1}</h6>
+              <p>${submissions_details2}</p>
+              <p>STAcK USED:${submissions_stack}</p>
+              <p>SUBMISSION Score:${submissions_score}</p>
+              <p>Submission Remark:${remarks}</p>
+            </div>
+          </div>`;
+          $(".row").append(ele);
+        }
+        console.log("alll");
+      }
+      hackall();
+
+      // })
+      // .catch(err=>{
+      //   console.log(err)
+      // })
+    </script>
   </body>
 </html>
