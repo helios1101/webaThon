@@ -65,7 +65,7 @@ select {
   padding: 12px 15px;
   margin: 8px 0;
   width: 20rem;
-  height:39px
+  height: 39px;
 }
 
 input {
@@ -386,11 +386,11 @@ input {
   transform: translateX(20%);
 }
 .rabbit {
-  width: 150px;
-  height: 70px;
+  width: 30px;
+  height: 20px;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  /* top: 74%;
+  left: 55%; */
   z-index: 3;
   fill: #fff;
 }
